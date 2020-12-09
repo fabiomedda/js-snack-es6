@@ -489,3 +489,254 @@ Crea 10 oggetti che rappresentano una zucchina,
 indicando per ognuna varietà, peso e lunghezza.
 Calcola quanto pesano tutte le zucchine.
 */
+
+/*
+{
+    let zucchine = {
+    zucchina1: {
+        varietà: "nero di Milano",
+        peso: 546,
+        lunghezza: 213
+    },
+    zucchina2: {
+        varietà: "romanesco",
+        peso: 456,
+        lunghezza: 152
+    },
+    zucchina3: {
+        varietà: "lunga fiorentina",
+        peso: 156,
+        lunghezza: 951
+    },
+    zucchina4: {
+        varietà: "siciliano",
+        peso: 245,
+        lunghezza: 447
+    },
+    zucchina5: {
+        varietà: "striata di Napoli",
+        peso: 657,
+        lunghezza: 645
+    },
+    zucchina6: {
+        varietà: "bianca triestina",
+        peso: 198,
+        lunghezza: 564
+    },
+    zucchina7: {
+        varietà: "rigata pugliese",
+        peso: 357,
+        lunghezza: 415
+    },
+    zucchina8: {
+        varietà: "tondo di Piacenza",
+        peso: 957,
+        lunghezza: 159
+    },
+    zucchina9: {
+        varietà: "ortolano di Faenza",
+        peso: 486,
+        lunghezza: 657
+    },
+    zucchina10: {
+        varietà: "tondo di Nizza",
+        peso: 823,
+        lunghezza: 214
+    } 
+    };
+    let pesoZucchine = 0; 
+    for (const key in zucchine) {
+        pesoZucchine += zucchine[key].peso;
+    }
+    console.log(`${pesoZucchine} grammi`);
+}
+*/
+
+/*
+JSnack 2
+Scrivi una funzione che accetti una stringa come
+argomento e la ritorni girata (es. Ciao -> oaiC)
+*/
+
+/*
+{
+    let string = "ciao";
+    let string2 = "cidzao";
+
+    const stringRov = (stringa) => {
+        let newString = [];
+        for (let index = stringa.length - 1; index >= 0; index--) {
+            newString += stringa[index];      
+        }
+        return newString;
+    }
+
+    console.log(stringRov(string));
+    console.log(stringRov(string2));
+
+
+    const stringRov2 = (stringa) => {
+        let newString = stringa.split("").reverse().join("");
+        return newString;
+    }
+
+    let string3 = "Roger";
+    console.log(stringRov2(string3));
+
+
+    const stringRov3 = (stringa) => {
+        let stringaSplit = stringa.split("")
+        let stringaReverse = stringaSplit.reverse()
+        let stringaJoin = stringaReverse.join("");
+        return stringaJoin;
+    }
+
+    let string4 = "Pippo";
+    console.log(stringRov3(string4));
+}
+*/
+
+/*
+JSnack 3
+Crea 10 oggetti che rappresentano una zucchina.
+Dividi in due array separati le zucchine che misurano
+meno o più di 15cm.
+Infine stampa separatamente quanto pesano i due gruppi
+di zucchine
+*/
+
+/*
+{
+    let zucchine = [
+    {
+        varietà: "nero di Milano",
+        peso: 546,
+        lunghezza: 213
+    },
+    {
+        varietà: "romanesco",
+        peso: 456,
+        lunghezza: 52
+    },
+    {
+        varietà: "lunga fiorentina",
+        peso: 156,
+        lunghezza: 151
+    },
+    {
+        varietà: "siciliano",
+        peso: 245,
+        lunghezza: 47
+    },
+    {
+        varietà: "striata di Napoli",
+        peso: 657,
+        lunghezza: 145
+    },
+    {
+        varietà: "bianca triestina",
+        peso: 198,
+        lunghezza: 364
+    },
+    {
+        varietà: "rigata pugliese",
+        peso: 357,
+        lunghezza: 41
+    },
+    {
+        varietà: "tondo di Piacenza",
+        peso: 957,
+        lunghezza: 159
+    },
+    {
+        varietà: "ortolano di Faenza",
+        peso: 486,
+        lunghezza: 257
+    },
+    {
+        varietà: "tondo di Nizza",
+        peso: 823,
+        lunghezza: 21
+    }
+    ];
+
+    let zucchinePlus = [];
+    let zucchineLess = [];
+
+    zucchine.forEach(element => {
+        if (element.lunghezza >= 150) {
+            zucchinePlus.push(element);
+        } else {
+            zucchineLess.push(element);
+        }
+    });
+
+    console.log(zucchinePlus);
+    console.log(zucchineLess);
+
+    let pesoTotPlus = 0;
+    let pesoTotLess = 0;
+
+    zucchinePlus.forEach(element => {
+        pesoTotPlus += element.peso;
+    });
+
+    zucchineLess.forEach(element => {
+        pesoTotLess += element.peso;
+    });
+
+    console.log(`${pesoTotPlus} grammi`);
+    console.log(`${pesoTotLess} grammi`);
+}
+*/
+
+/*
+JSnack 4
+Scrivi una funzione che fonda due array (con lo stesso
+numero di elementi) prendendo alternativamente gli
+elementi da uno e dall’altro
+es. [a,b,c], [1,2,3] → [a,1,b,2,c,3].
+*/
+
+/*
+{
+    let lettere = ["a","b","c","d"];
+    let numeri = [1,2,3,4];
+
+    const misto = (array1, array2) => {
+        if (array1.length === array2.length) {
+            let array3 = [];
+            for (let i = 0; i < array1.length; i++) {
+                array3.push(array1[i]);
+                array3.push(array2[i]);
+            }
+            return array3;
+        }
+    }
+    let meltArray = misto(lettere, numeri);
+    console.log(meltArray);
+}
+*/
+
+/*
+JSnack 5
+Scrivi una funzione che accetti tre argomenti:
+un array e due numeri (“a” più piccolo di “b” e “b” grande al
+massimo quanto il numero di elementi dell’array).
+La funzione ritornerà un nuovo array con i valori che
+hanno la posizione compresa tra “a” e “b”
+*/
+
+{
+    let number = [0,1,2,3,4,5,6,7,8];
+    let start = 2;
+    let end = 6;
+    const argomentStartEnd = (array, n1, n2) => {
+        let newArray = [];
+        for (let i = start; i < end; i++) {
+            newArray.push(number[i]);
+        }
+        return newArray;
+    }
+    console.log(argomentStartEnd(number,start,end));
+}
